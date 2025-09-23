@@ -1,0 +1,154 @@
+[
+  {
+    "id": "12345",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T10:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12345",
+    "subscription_url": "https://api.github.com/notifications/threads/12345/subscription",
+    "repository": {
+      "id": 1,
+      "full_name": "valid/repo1",
+      "name": "repo1"
+    },
+    "subject": {
+      "title": "Valid Issue",
+      "url": "https://api.github.com/repos/valid/repo1/issues/1",
+      "type": "Issue"
+    }
+  },
+  {
+    "id": "12346",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T11:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12346",
+    "subscription_url": "https://api.github.com/notifications/threads/12346/subscription",
+    "repository": {
+      "id": 2,
+      "full_name": "phantom/repo1",
+      "name": "repo1"
+    },
+    "subject": {
+      "title": "Ghost Issue 1",
+      "url": null,
+      "type": "Issue"
+    }
+  },
+  {
+    "id": "12347",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T12:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12347",
+    "subscription_url": "https://api.github.com/notifications/threads/12347/subscription",
+    "repository": {
+      "id": 3,
+      "full_name": "valid/repo2",
+      "name": "repo2"
+    },
+    "subject": {
+      "title": "Another Valid Issue",
+      "url": "https://api.github.com/repos/valid/repo2/issues/5",
+      "type": "Issue"
+    }
+  },
+  {
+    "id": "12348",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T13:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12348",
+    "subscription_url": "https://api.github.com/notifications/threads/12348/subscription",
+    "repository": {
+      "id": 4,
+      "full_name": "deleted/repo2",
+      "name": "repo2"
+    },
+    "subject": {
+      "title": "Ghost PR 1",
+      "url": null,
+      "type": "PullRequest"
+    }
+  },
+  {
+    "id": "12349",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T14:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12349",
+    "subscription_url": "https://api.github.com/notifications/threads/12349/subscription",
+    "repository": {
+      "id": 5,
+      "full_name": "phantom/repo3",
+      "name": "repo3"
+    },
+    "subject": {
+      "title": "Phantom Discussion",
+      "url": null,
+      "type": "Discussion"
+    }
+  },
+  {
+    "id": "12350",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T15:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12350",
+    "subscription_url": "https://api.github.com/notifications/threads/12350/subscription",
+    "repository": {
+      "id": 6,
+      "full_name": "valid/repo3",
+      "name": "repo3"
+    },
+    "subject": {
+      "title": "Valid Pull Request",
+      "url": "https://api.github.com/repos/valid/repo3/pulls/42",
+      "type": "PullRequest"
+    }
+  },
+  {
+    "id": "12351",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T16:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12351",
+    "subscription_url": "https://api.github.com/notifications/threads/12351/subscription",
+    "repository": {
+      "id": 7,
+      "full_name": "ghost/repo4",
+      "name": "repo4"
+    },
+    "subject": {
+      "title": "Deleted Release",
+      "url": null,
+      "type": "Release"
+    }
+  },
+  {
+    "id": "12352",
+    "unread": false,
+    "reason": "subscribed",
+    "updated_at": "2023-10-01T17:00:00Z",
+    "last_read_at": null,
+    "url": "https://api.github.com/notifications/threads/12352",
+    "subscription_url": "https://api.github.com/notifications/threads/12352/subscription",
+    "repository": {
+      "id": 8,
+      "full_name": "phantom/repo5",
+      "name": "repo5"
+    },
+    "subject": {
+      "title": "Ghost Issue 2",
+      "url": null,
+      "type": "Issue"
+    }
+  }
+]

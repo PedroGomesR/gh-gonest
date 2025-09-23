@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "url": "https://api.github.com/notifications/threads/1",
+    "subscription_url": "https://api.github.com/notifications/threads/1/subscription",
+    "repository": {"full_name": "real/repo"},
+    "subject": {"title": "Issue", "type": "Issue"}
+  },
+  {
+    "id": "2", 
+    "url": "https://api.github.com/notifications/threads/2",
+    "subscription_url": "https://api.github.com/notifications/threads/2/subscription",
+    "repository": {"full_name": "another/real-repo"},
+    "subject": {"title": "PR", "type": "PullRequest"}
+  }
+]

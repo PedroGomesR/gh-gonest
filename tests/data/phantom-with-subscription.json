@@ -1,0 +1,9 @@
+[
+  {
+    "id": "1",
+    "url": "https://api.github.com/notifications/threads/1",
+    "subscription_url": "https://api.github.com/notifications/threads/1/subscription",
+    "repository": {"full_name": "phantom/repo"},
+    "subject": {"title": "Issue", "type": "Issue"}
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "url": "https://api.github.com/notifications/threads/1",
+    "subscription_url": null,
+    "repository": {"full_name": "deleted/repo1"},
+    "subject": {"title": "Spam Issue 1", "type": "Issue"}
+  },
+  {
+    "id": "2",
+    "url": "https://api.github.com/notifications/threads/2", 
+    "subscription_url": null,
+    "repository": {"full_name": "deleted/repo2"},
+    "subject": {"title": "Spam Issue 2", "type": "Issue"}
+  },
+  {
+    "id": "3",
+    "url": "https://api.github.com/notifications/threads/3",
+    "subscription_url": null,
+    "repository": {"full_name": "phantom/repo"},
+    "subject": {"title": "Another phantom", "type": "Issue"}
+  }
+]
