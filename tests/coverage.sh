@@ -16,7 +16,6 @@ echo "Running tests with coverage analysis..."
 
 # Run BATS tests through kcov
 kcov \
-    --exclude-pattern=/usr,/tmp \
     --include-pattern="$(pwd)/gh-gonest" \
     "$COVERAGE_DIR" \
     bats tests/gh-gonest.bats
