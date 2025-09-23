@@ -2,21 +2,33 @@
 # Makefile for gh-gonest GitHub CLI extension
 ###############################################################################
 
-.PHONY: help lint setup test
+.PHONY: clean coverage help lint setup test
 
 # Default target
 help:
 	@echo "Available targets:"
-	@echo "  help       - Show this help and exit"
+	@echo "  clean      - Clean temporary files"
+	@echo "  coverage   - Run tests with coverage analysis"
 	@echo "  lint       - Run shellcheck linting"
 	@echo "  setup      - Install development dependencies"
 	@echo "  test       - Run BATS tests"
+
+# Clean temporary files
+clean:
+	@echo "Cleaning temporary files..."
+	rm -rf tests/coverage
+
+# Run tests with coverage analysis
+coverage:
+	@echo "Starting coverage analysis..."
+	@./tests/coverage.sh
 
 # Lint bash scripts
 lint:
 	@echo "Linting bash scripts..."
 	@if command -v shellcheck >/dev/null 2>&1; then \
 		shellcheck gh-gonest; \
+		shellcheck tests/coverage.sh; \
 		shellcheck tests/bin/gh; \
 		echo "Linting passed"; \
 	else \
@@ -27,12 +39,13 @@ lint:
 setup:
 	@echo "Installing test dependencies..."
 	@if command -v brew >/dev/null 2>&1; then \
-		brew install bats-core shellcheck; \
+		brew install bats-core kcov shellcheck; \
 	elif command -v apt-get >/dev/null 2>&1; then \
-		sudo apt-get update && sudo apt-get install -y bats shellcheck; \
+		sudo apt-get update && sudo apt-get install -y bats kcov shellcheck; \
 	else \
 		echo "Please install bats, shellcheck, and kcov manually:"; \
 		echo "  - BATS: https://bats-core.readthedocs.io/"; \
+		echo "  - kcov: https://github.com/SimonKagstrom/kcov"; \
 		echo "  - shellcheck: https://github.com/koalaman/shellcheck"; \
 	fi
 

@@ -1,3 +1,6 @@
+# Coverage reports
+tests/coverage/
+
 # Temporary files
 *.tmp
 *.log
