@@ -2,13 +2,15 @@
 # Makefile for gh-gonest GitHub CLI extension
 ###############################################################################
 
-.PHONY: clean coverage help lint setup test
+.PHONY: clean coverage help install lint setup test
 
 # Default target
 help:
 	@echo "Available targets:"
 	@echo "  clean      - Clean temporary files"
 	@echo "  coverage   - Run tests with coverage analysis"
+	@echo "  help       - Show this help message and exit"
+	@echo "  install    - Install as gh extension locally"
 	@echo "  lint       - Run shellcheck linting"
 	@echo "  setup      - Install development dependencies"
 	@echo "  test       - Run BATS tests"
@@ -22,6 +24,11 @@ clean:
 coverage:
 	@echo "Starting coverage analysis..."
 	@./tests/coverage.sh
+
+# Install locally for testing
+install:
+	@echo "Installing gh-gonest locally..."
+	gh extension install .
 
 # Lint bash scripts
 lint:
