@@ -8,7 +8,7 @@
 
 ---
 
-`gh-gonest` is a GitHub CLI extension that automatically detects and removes phantom notifications from deleted repositories. When repositories create issues with mass @mentions and then get deleted, they leave behind "ghost" notifications due to a GitHub bug that prevents them from being cleared through the GitHub UI. This tool finds and cleans them up, restoring your notification sanity. See more information [here](https://github.com/orgs/community/discussions/6874).
+`gh-gonest` is a [GitHub CLI extension][gh-extension] that automatically detects and removes phantom notifications from deleted repositories. When repositories create issues with mass @mentions and then get deleted, they leave behind "ghost" notifications due to a GitHub bug that prevents them from being cleared through the GitHub UI. This tool finds and cleans them up, restoring your notification sanity. See more information [here][github-discussion].
 
 ## 🎯 Problem
 
@@ -31,8 +31,8 @@ Spam repositories create issues, tag thousands of users via @mentions, then get 
 
 ### 🛠️ Requirements
 
-- [GitHub CLI](https://cli.github.com/) (`gh`) - version 2.0+
-- [jq](https://jqlang.github.io/jq/) - JSON processor
+- [GitHub CLI][github-cli] (`gh`) - version 2.0+
+- [jq][jq] - JSON processor
 - GitHub authentication (`gh auth login`)
 
 ### 🚀 Installation
@@ -92,4 +92,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 📄 License
 
-The library is freely distributable under the terms of the [MIT license](LICENSE).
+The library is freely distributable under the terms of the [MIT license][license].
+
+<!-- Link references -->
+[gh-extension]: https://cli.github.com/manual/gh_extension
+[github-cli]: https://cli.github.com
+[github-discussion]: https://github.com/orgs/community/discussions/6874
+[jq]: https://jqlang.github.io/jq
+[license]: LICENSE
