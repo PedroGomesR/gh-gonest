@@ -27,6 +27,17 @@ Spam repositories create issues, tag thousands of users via @mentions, then get 
 2. **Detecting** phantom notifications from deleted repos (404 responses)
 3. **Cleaning** them via read → done → unsubscribe sequence
 
+## 👻 Why gh-gonest?
+
+The `gh-gonest` extension approach focuses on:
+
+- **Selective targeting**: Only marks ghost notifications as done, preserving all legitimate notifications
+- **Automated detection**: Automatically identifies phantom notifications by checking for 404 repository responses - no manual notification ID lookup required
+- **No manual token generation**: Leverages existing `gh auth login` setup without requiring manual GitHub token creation with specific permissions
+- **Safe preview mode**: The `--dry-run` flag shows exactly what would be removed before taking action
+- **Minimal dependencies**: Uses widely used tools (`gh` and `jq`) with simple shell scripting - no additional programming languages or unusual dependencies
+- **Flexible date filtering**: Target specific time ranges with `--after` and `--before` flags for precise control
+
 ## ⚡ Getting Started
 
 ### 🛠️ Requirements
