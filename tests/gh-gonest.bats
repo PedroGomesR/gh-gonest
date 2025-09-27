@@ -13,7 +13,7 @@ setup() {
 
 teardown() {
     # Clean up environment variables used in integration tests
-    unset GH_AUTH_EXIT GH_NOTIFICATIONS GH_API_EXIT
+    unset GH_API_USER_EXIT GH_NOTIFICATIONS GH_API_EXIT
 }
 
 ###############################################################################
@@ -63,7 +63,7 @@ teardown() {
 ###############################################################################
 
 @test "check for authentication failure handling" {
-    export GH_AUTH_EXIT=1
+    export GH_API_USER_EXIT=1
 
     run "$SCRIPT_PATH" --dry-run
     [ "$status" -eq 1 ]
@@ -145,7 +145,7 @@ teardown() {
 ###############################################################################
 
 @test "check for empty notification feed handling" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/empty.json"
 
     run "$SCRIPT_PATH" --dry-run
@@ -154,7 +154,7 @@ teardown() {
 }
 
 @test "check for malformed JSON handling in notifications endpoint" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/wrong-structure.json"
 
     run "$SCRIPT_PATH" --dry-run
@@ -163,7 +163,7 @@ teardown() {
 }
 
 @test "check for JSON counting failure in notifications response" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/malformed.json"
 
     run "$SCRIPT_PATH" --dry-run
@@ -172,7 +172,7 @@ teardown() {
 }
 
 @test "check for parameterized API failure handling in dry-run mode" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_API_EXIT=1
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/with-phantoms.json"
 
@@ -182,7 +182,7 @@ teardown() {
 }
 
 @test "check for parameterized API failure handling in dry-run mode with parameters" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_API_EXIT=1
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/with-phantoms.json"
 
@@ -192,7 +192,7 @@ teardown() {
 }
 
 @test "check for date filtering failure handling in dry-run mode" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/malformed.json"
 
     run "$SCRIPT_PATH" --before "2025-12-31T23:59:59Z" --dry-run
@@ -201,7 +201,7 @@ teardown() {
 }
 
 @test "check for notification cleanup failure (mark as read fails)" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/with-phantoms.json"
     export GH_API_PATCH_EXIT=1
 
@@ -212,7 +212,7 @@ teardown() {
 }
 
 @test "check for notification cleanup failure (mark as done fails)" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/with-phantoms.json"
     export GH_API_DELETE_EXIT=1
 
@@ -223,7 +223,7 @@ teardown() {
 }
 
 @test "check unsubscribe with null subscription URL" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/phantom-null-subscription.json"
     export GONEST_DEBUG=1
     run "$SCRIPT_PATH"
@@ -234,7 +234,7 @@ teardown() {
 }
 
 @test "check unsubscribe with empty subscription URL" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/phantom-empty-subscription.json"
     export GONEST_DEBUG=1
 
@@ -245,7 +245,7 @@ teardown() {
 }
 
 @test "check unsubscribe with invalid subscription URL format" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/phantom-invalid-subscription.json"
     export GONEST_DEBUG=1
 
@@ -256,7 +256,7 @@ teardown() {
 }
 
 @test "check unsubscribe failure handling" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/phantom-with-subscription.json"
     export GONEST_DEBUG=1
     export GH_API_SUBSCRIPTION_DELETE_EXIT=1
@@ -272,7 +272,7 @@ teardown() {
 ###############################################################################
 
 @test "check for no phantom notifications found message" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/no-phantoms.json"
 
     run "$SCRIPT_PATH" --dry-run
@@ -281,7 +281,7 @@ teardown() {
 }
 
 @test "check for phantom notification detection in dry-run mode" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/with-phantoms.json"
 
     run "$SCRIPT_PATH" --dry-run
@@ -292,7 +292,7 @@ teardown() {
 }
 
 @test "check for multiple phantom notifications handling in dry-run mode" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/multiple-phantoms.json"
 
     run "$SCRIPT_PATH" --dry-run
@@ -305,7 +305,7 @@ teardown() {
 }
 
 @test "check successful notification cleanup" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/phantom-with-subscription.json"
     export GH_API_PATCH_EXIT=0
     export GH_API_DELETE_EXIT=0
@@ -321,7 +321,7 @@ teardown() {
 }
 
 @test "check successful cleanup with mixed valid and phantom notifications" {
-    export GH_AUTH_EXIT=0
+    export GH_API_USER_EXIT=0
     export GH_NOTIFICATIONS="$BATS_TEST_DIRNAME/data/mixed-notifications.json"
     export GH_API_PATCH_EXIT=0
     export GH_API_DELETE_EXIT=0

@@ -184,11 +184,21 @@ check_prerequisites() {
     fi
 
     # Check if authenticated with GitHub
-    if ! gh auth status >/dev/null 2>&1; then
+    if ! gh api user >/dev/null 2>&1; then
         die "Not authenticated with GitHub. Run: gh auth login"
     fi
 
     debug "All prerequisites met"
+}
+
+# Show current GitHub user
+show_current_user() {
+    local github_user
+    if github_user=$(gh api user --jq '.login' 2>/dev/null); then
+        info "Running as GitHub user: $github_user"
+    else
+        warn "Could not determine GitHub username"
+    fi
 }
 
 # Fetch all notifications
@@ -391,6 +401,7 @@ main() {
     check_prerequisites
 
     info "gh-gonest - GitHub Ghost Notification Cleaner"
+    show_current_user
 
     fetch_notifications
     scan_phantoms

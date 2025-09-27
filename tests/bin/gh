@@ -4,8 +4,8 @@
 ###############################################################################
 
 case "$1 $2" in
-  "auth status")
-    exit "${GH_AUTH_EXIT:-0}"
+  "api user")
+    exit "${GH_API_USER_EXIT:-0}"
     ;;
   "api notifications"*)
     if [[ -n "$GH_NOTIFICATIONS" && -f "$GH_NOTIFICATIONS" ]]; then
