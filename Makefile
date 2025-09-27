@@ -30,6 +30,19 @@ install:
 	@echo "Installing gh-gonest locally..."
 	gh extension install .
 
+# Install BATS testing framework
+install_bats:
+	@echo "Installing BATS..."
+	@cd /tmp && git clone https://github.com/bats-core/bats-core.git && \
+	cd bats-core && sudo ./install.sh /usr/local && cd /tmp && rm -rf bats-core
+
+# Install kcov coverage tool
+install_kcov:
+	@echo "Installing kcov..."
+	@sudo apt-get install -y cmake g++ libdw-dev libelf-dev libcurl4-openssl-dev
+	@cd /tmp && git clone https://github.com/SimonKagstrom/kcov.git && \
+	cd kcov && mkdir build && cd build && cmake .. && make && sudo make install && cd /tmp && rm -rf kcov
+
 # Lint bash scripts
 lint:
 	@echo "Linting bash scripts..."
@@ -45,10 +58,10 @@ lint:
 # Setup development dependencies
 setup:
 	@echo "Installing test dependencies..."
-	@if command -v brew >/dev/null 2>&1; then \
-		brew install bats-core kcov shellcheck; \
-	elif command -v apt-get >/dev/null 2>&1; then \
-		sudo apt-get update && sudo apt-get install -y bats kcov shellcheck; \
+	@if command -v apt-get >/dev/null 2>&1; then \
+		sudo apt-get update && sudo apt-get install -y shellcheck; \
+		$(MAKE) install_bats; \
+		$(MAKE) install_kcov; \
 	else \
 		echo "Please install bats, shellcheck, and kcov manually:"; \
 		echo "  - BATS: https://bats-core.readthedocs.io/"; \
