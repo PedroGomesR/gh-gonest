@@ -105,6 +105,25 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 The library is freely distributable under the terms of the [MIT license][license].
 
+## 💖 Thanks for the Support
+
+Every star ⭐, fork 🍴, and contribution 🤝 means a lot! Your support helps keep `gh-gonest` growing and improving.
+
+If you've found this project useful, please consider:
+- Giving it a star on GitHub ⭐
+- Sharing it with friends or colleagues
+- Opening issues, discussions, or pull requests to make it better
+
+Together we can keep GitHub notifications ghost-free 👻✨
+
+<p align="center">
+  <a href="https://github.com/emmanuel-ferdman/gh-gonest">
+    <picture>
+      <img src="https://api.star-history.com/svg?repos=emmanuel-ferdman/gh-gonest&type=Date" alt="gh-gonest">
+    </picture>
+  </a>
+</p>
+
 <!-- Link references -->
 [gh-extension]: https://cli.github.com/manual/gh_extension
 [github-cli]: https://cli.github.com
